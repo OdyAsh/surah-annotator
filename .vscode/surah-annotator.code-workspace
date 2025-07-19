@@ -1,0 +1,43 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+        {
+            "path": "../../surah-splitter"
+        }
+	],
+	"settings": {
+		"terminal.integrated.profiles.windows": {
+			"uv custom venv": {
+				"path": "PowerShell",
+				"args": [
+					"-ExecutionPolicy",
+					"ByPass",
+					"-NoExit",
+					"-Command",
+					// Details on `PYTHONDONTWRITEBYTECODE`:
+					//	https://stackoverflow.com/questions/154443/how-to-avoid-pyc-files
+					"$env:PYTHONDONTWRITEBYTECODE = 1;",
+					
+					// COMPLETELY OPTIONAL (DON'T READ THIS SECTION IF YOU DON'T KNOW WHAT IT IS):
+					// Details on `VIRTUAL_ENV_DISABLE_PROMPT`:
+					//  If you have defined a custom prompt for your terminal (eg., in your "Microsoft.PowerShell_profile.ps1" file),
+					//  then you can disable the virtual environment prompt (created in "activate.ps1" script) by setting this variable to 1.
+					"$env:VIRTUAL_ENV_DISABLE_PROMPT = 1;",
+					
+					// Details on `${env:}:
+					//	https://www.perplexity.ai/search/how-to-install-venv-in-another-hn7QUU7sQvmLORiiMeWPzA?9=r
+					"$env:UV_PROJECT_ENVIRONMENT = '${env:MY_VENV_ROOT}\\.venv-surah-splitter';",
+					"& ${env:MY_VENV_ROOT}\\.venv-surah-splitter\\Scripts\\activate.ps1;",
+				]
+			}
+		},
+		"terminal.integrated.defaultProfile.windows": "uv custom venv",
+		"python.defaultInterpreterPath": "${env:MY_VENV_ROOT}\\.venv-surah-splitter\\Scripts\\python.exe",
+		"python.terminal.activateEnvironment": true,
+		
+		// Source: https://stackoverflow.com/a/78454029/13626137
+		"python.analysis.indexing": false,
+	}
+}
