@@ -67,7 +67,7 @@ class _TimestampCardsState extends ConsumerState<TimestampCards> {
             color: Theme.of(context).colorScheme.surface,
             border: Border(
               bottom: BorderSide(
-                color: Theme.of(context).colorScheme.surfaceVariant,
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
               ),
             ),
           ),

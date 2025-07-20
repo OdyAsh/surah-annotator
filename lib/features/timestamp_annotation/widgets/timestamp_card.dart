@@ -150,7 +150,7 @@ class _TimestampCardState extends State<TimestampCard> {
               width: double.infinity,
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: theme.colorScheme.surfaceVariant.withOpacity(0.5),
+                color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Text(
@@ -300,7 +300,7 @@ class _TimestampCardState extends State<TimestampCard> {
       return theme.colorScheme.secondaryContainer;
     }
     if (widget.timestamp.isReviewed) {
-      return theme.colorScheme.surfaceVariant;
+      return theme.colorScheme.surfaceContainerHighest;
     }
     return theme.colorScheme.surface;
   }

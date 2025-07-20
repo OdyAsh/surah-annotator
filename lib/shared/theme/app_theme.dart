@@ -12,11 +12,9 @@ class AppTheme {
       onSecondary: AppColors.onSecondary,
       error: AppColors.error,
       onError: AppColors.onError,
-      background: AppColors.background,
-      onBackground: AppColors.onBackground,
       surface: AppColors.surface,
       onSurface: AppColors.onSurface,
-      surfaceVariant: AppColors.surfaceVariant,
+      surfaceContainerHighest: AppColors.surfaceVariant,
       onSurfaceVariant: AppColors.onSurfaceVariant,
     );
 
@@ -38,7 +36,7 @@ class AppTheme {
       ),
 
       // Card Theme
-      cardTheme: const CardTheme(
+      cardTheme: const CardThemeData(
         elevation: 2,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(12)),
@@ -124,7 +122,7 @@ class AppTheme {
         activeTrackColor: AppColors.primary,
         inactiveTrackColor: AppColors.surfaceVariant,
         thumbColor: AppColors.primary,
-        overlayColor: AppColors.primary.withOpacity(0.12),
+        overlayColor: AppColors.primary.withValues(alpha: 0.12),
         valueIndicatorColor: AppColors.primary,
         valueIndicatorTextStyle: const TextStyle(
           color: AppColors.onPrimary,
@@ -135,14 +133,14 @@ class AppTheme {
 
       // Switch Theme
       switchTheme: SwitchThemeData(
-        thumbColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        thumbColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return AppColors.onPrimary;
           }
           return AppColors.surfaceVariant;
         }),
-        trackColor: MaterialStateProperty.resolveWith((states) {
-          if (states.contains(MaterialState.selected)) {
+        trackColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.selected)) {
             return AppColors.primary;
           }
           return AppColors.onSurfaceVariant;

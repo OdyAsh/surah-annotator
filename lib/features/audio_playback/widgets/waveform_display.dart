@@ -47,7 +47,7 @@ class _WaveformDisplayState extends ConsumerState<WaveformDisplay> {
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surfaceVariant,
+                  color: Theme.of(context).colorScheme.surfaceContainerHighest,
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Stack(
@@ -64,7 +64,7 @@ class _WaveformDisplayState extends ConsumerState<WaveformDisplay> {
                           width: (MediaQuery.of(context).size.width - 64) * (position / duration),
                           height: double.infinity,
                           decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary.withOpacity(0.3),
+                            color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.3),
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
@@ -118,7 +118,7 @@ class _WaveformDisplayState extends ConsumerState<WaveformDisplay> {
             margin: const EdgeInsets.symmetric(horizontal: 0.5),
             height: height,
             decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.onSurfaceVariant.withOpacity(0.3),
+              color: Theme.of(context).colorScheme.onSurfaceVariant.withValues(alpha: 0.3),
               borderRadius: BorderRadius.circular(1),
             ),
           ),

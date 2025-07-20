@@ -202,7 +202,7 @@ class _WaveformLoadingIndicatorState extends State<WaveformLoadingIndicator>
                 height: height,
                 margin: const EdgeInsets.symmetric(horizontal: 1),
                 decoration: BoxDecoration(
-                  color: color.withOpacity(0.3 + 0.7 * progress),
+                  color: color.withValues(alpha: 0.3 + 0.7 * progress),
                   borderRadius: BorderRadius.circular(1.5),
                 ),
               );
