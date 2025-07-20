@@ -1,5 +1,5 @@
 name: surah_annotator
-description: "A new Flutter project."
+description: "A Flutter app for annotating Quranic audio with precise timestamps."
 publish_to: 'none'
 version: 0.1.0
 
@@ -9,13 +9,30 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  english_words: ^4.0.0
-  provider: ^6.1.5
+  
+  # State Management
+  flutter_riverpod: ^2.4.9
+  
+  # Audio Processing
+  just_audio: ^0.9.36
+  audio_waveforms: ^1.0.5
+  
+  # File Operations
+  file_picker: ^6.1.1
+  path_provider: ^2.1.2
+  
+  # JSON Handling
+  json_annotation: ^4.8.1
+  
+  # Utilities
+  uuid: ^4.3.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  build_runner: ^2.4.7
+  json_serializable: ^6.7.1
 
 flutter:
   uses-material-design: true
